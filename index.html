@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bulletin Board</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="board-container">
+  <div class="board-header">
+    <div class="title-section">
+      <h1>DICT Bulletin Board</h1>
+    </div>
+    <div class="header-actions">
+      <div class="notification-badge" id="urgentCounter"><span id="urgentCount">0</span> urgent</div>
+      <div class="live-date"><span id="currentDateText"></span></div>
+    </div>
+  </div>
+
+  <div class="dashboard-grid">
+    <div class="card">
+      <div class="card-header">
+        <h2>Upcoming Schedule</h2>
+        <div class="badge-pill">priority flags</div>
+      </div>
+      <div class="card-content">
+        <div class="mini-calendar" id="miniCalendarWidget"></div>
+        <div class="schedule-list" id="scheduleList"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <h2>Live Feed</h2>
+        <div class="badge-pill">pinned on top</div>
+      </div>
+      <div class="card-content">
+        <div class="feed-toolbar">
+          <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search announcements, orders...">
+          </div>
+          <select id="sortSelect" class="sort-select">
+            <option value="latest">Latest</option>
+            <option value="urgent">Urgent first</option>
+            <option value="pinned">Pinned first</option>
+          </select>
+        </div>
+        <div class="feed-filters" id="filterButtons">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="announcement">Announcements</button>
+          <button class="filter-btn" data-filter="memo">Memos</button>
+          <button class="filter-btn" data-filter="order">Office Orders</button>
+          <button class="filter-btn" data-filter="travel">Travel Orders</button>
+        </div>
+        <div class="feed-stream" id="feedStream"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="legal-footer">
+    <span>DICT BULLETIN BOARD · ANNOUNCEMENTS, MEMOS, AND MORE</span>
+    <span>Prix · 2025 - 2026</span>
+  </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
+
