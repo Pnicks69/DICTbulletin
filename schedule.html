@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Schedule - DICT</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="schedule.css">
+</head>
+<body>
+
+<div class="board-container">
+  <div class="board-header">
+    <div class="header-left">
+      <h1>DICT Bulletin Board</h1>
+    </div>
+    <div class="header-center">
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">🏠 Home</a>
+        <a href="schedule.html" class="nav-link active">📅 Schedule</a>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="live-date"><span id="currentDateText"></span></div>
+    </div>
+  </div>
+
+  <div class="schedule-search-container card">
+    <div class="card-header">
+      <h2>🔍 Employee Schedule Lookup</h2>
+      <div class="badge-pill">enter employee ID</div>
+    </div>
+    <div class="card-content">
+      <div class="search-area">
+        <div class="search-input-group">
+          <input type="text" id="employeeIdInput" placeholder="e.g., EMP123, 2024-001" autocomplete="off">
+          <button id="searchBtn" class="btn btn-primary">🔍 Search</button>
+          <button id="clearBtn" class="btn">Clear</button>
+        </div>
+        <div id="searchStatus" class="search-status"></div>
+      </div>
+      <div id="scheduleResults" class="schedule-results">
+        <div class="empty-state">👈 Enter an Employee ID and click Search</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="legal-footer">
+    <span>DICT BULLETIN BOARD · EMPLOYEE SCHEDULES</span>
+    <span>Prix · 2025 - 2026</span>
+  </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script src="schedule.js"></script>
+</body>
+</html>

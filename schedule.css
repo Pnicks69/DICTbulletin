@@ -1,0 +1,342 @@
+/* Schedule page specific styles */
+
+.schedule-panels {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 1.8rem;
+  align-items: start;
+}
+
+/* Left panel - employee list */
+.employees-panel {
+  height: fit-content;
+  max-height: 70vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.employee-list {
+  overflow-y: auto;
+  max-height: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.search-employee {
+  margin-bottom: 1rem;
+}
+
+.search-employee input {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 2rem;
+  border: 1px solid var(--border, #cbd5e1);
+  background: var(--bg, #f0f4fc);
+  font-family: inherit;
+  font-size: 0.85rem;
+}
+
+.employee-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 1rem;
+  background: white;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: 0.2s;
+  border: 1px solid #eef2ff;
+}
+
+.employee-item:hover {
+  background: #f8fafc;
+  transform: translateX(3px);
+}
+
+.employee-item.active {
+  background: #e0e7ff;
+  border-left: 4px solid #3B82F6;
+}
+
+.employee-avatar {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #3B82F6, #2563eb);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.employee-info {
+  flex: 1;
+}
+
+.employee-name {
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 2px;
+}
+
+.employee-dept {
+  font-size: 0.7rem;
+  color: #64748b;
+}
+
+/* Right panel - schedule view */
+.schedule-view {
+  min-height: 400px;
+}
+
+.weekday-schedule {
+  background: white;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #eef2ff;
+  overflow: hidden;
+}
+
+.weekday-header {
+  background: #f1f5f9;
+  padding: 0.6rem 1rem;
+  font-weight: 700;
+  font-size: 0.85rem;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.weekday-date {
+  font-weight: normal;
+  color: #475569;
+  font-size: 0.75rem;
+}
+
+.schedule-item-row {
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.schedule-item-row:last-child {
+  border-bottom: none;
+}
+
+.schedule-time {
+  min-width: 90px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: #3B82F6;
+}
+
+.schedule-desc {
+  flex: 1;
+  font-size: 0.85rem;
+}
+
+.schedule-location {
+  font-size: 0.7rem;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 2rem;
+  color: #64748b;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .schedule-panels {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .employees-panel {
+    max-height: none;
+  }
+  .employee-list {
+    max-height: 300px;
+  }
+}
+/* ===== RESPONSIVE ADDITIONS (preserving original two-panel layout) ===== */
+
+/* Tablets and below – allow schedule panel to adjust */
+@media (max-width: 900px) {
+  .schedule-panels {
+    gap: 1rem;
+  }
+  .employees-panel .card-header h2,
+  .schedule-panel .card-header h2 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Below 768px – stack panels vertically (keeping original design intent) */
+@media (max-width: 768px) {
+  .schedule-panels {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .employees-panel {
+    max-height: 350px;
+  }
+  .employee-list {
+    max-height: 250px;
+  }
+  .schedule-view {
+    min-height: 300px;
+  }
+}
+
+/* Small phones – compact text and spacing */
+@media (max-width: 480px) {
+  .schedule-panels {
+    gap: 0.8rem;
+  }
+  .employee-item {
+    padding: 0.5rem 0.7rem;
+  }
+  .employee-avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 0.8rem;
+  }
+  .employee-name {
+    font-size: 0.8rem;
+  }
+  .weekday-header {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.75rem;
+  }
+  .schedule-item-row {
+    padding: 0.5rem 0.6rem;
+  }
+  .schedule-time {
+    min-width: 70px;
+    font-size: 0.7rem;
+  }
+  .schedule-desc {
+    font-size: 0.75rem;
+  }
+  .back-button {
+    font-size: 0.75rem;
+  }
+}
+/* Schedule search page – additional styles */
+.schedule-search-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.search-area {
+  margin-bottom: 1.5rem;
+}
+
+.search-input-group {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+#employeeIdInput {
+  flex: 2;
+  min-width: 200px;
+  padding: 0.7rem 1rem;
+  border-radius: 2rem;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+
+#searchBtn, #clearBtn {
+  padding: 0.6rem 1.2rem;
+}
+
+.search-status {
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+}
+
+.search-status .error {
+  color: #b91c1c;
+}
+.search-status .success {
+  color: #166534;
+}
+.search-status .loading {
+  color: #2563eb;
+}
+
+.employee-info-card {
+  background: #f8fafc;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #3B82F6;
+}
+
+.employee-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.employee-id {
+  font-size: 0.85rem;
+  color: #475569;
+}
+
+.schedule-count {
+  font-size: 0.75rem;
+  margin-top: 0.4rem;
+  color: #3B82F6;
+}
+
+.schedule-entry-card {
+  background: white;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #eef2ff;
+  transition: 0.1s;
+}
+
+.schedule-entry-card:hover {
+  transform: translateX(3px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.schedule-title {
+  font-weight: 700;
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+.schedule-desc {
+  font-size: 0.85rem;
+  color: #334155;
+  margin: 0.3rem 0;
+}
+
+.schedule-location {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-top: 0.4rem;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 2rem;
+  color: #64748b;
+}

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -8,12 +8,19 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
 <div class="board-container">
   <div class="board-header">
-    <div class="title-section">
+    <div class="header-left">
       <h1>DICT Bulletin Board</h1>
     </div>
-    <div class="header-actions">
+    <div class="header-center">
+      <div class="nav-links">
+        <a href="index.html" class="nav-link active">🏠 Home</a>
+        <a href="schedule.html" class="nav-link">📅 Schedule</a>
+      </div>
+    </div>
+    <div class="header-right">
       <div class="notification-badge" id="urgentCounter"><span id="urgentCount">0</span> urgent</div>
       <div class="live-date"><span id="currentDateText"></span></div>
     </div>
@@ -23,7 +30,7 @@
     <div class="card">
       <div class="card-header">
         <h2>Upcoming Schedule</h2>
-        <div class="badge-pill">priority flags</div>
+        <div class="badge-pill">from employee schedules</div>
       </div>
       <div class="card-content">
         <div class="mini-calendar" id="miniCalendarWidget"></div>
@@ -34,7 +41,7 @@
     <div class="card">
       <div class="card-header">
         <h2>Live Feed</h2>
-        <div class="badge-pill">pinned on top</div>
+        <div class="badge-pill">announcements & orders</div>
       </div>
       <div class="card-content">
         <div class="feed-toolbar">
@@ -71,4 +78,3 @@
 <script src="script.js"></script>
 </body>
 </html>
-
